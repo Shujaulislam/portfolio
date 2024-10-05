@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Text, Float, Html } from '@react-three/drei'
 import { motion } from 'framer-motion'
@@ -18,21 +18,40 @@ const skills = [
 
 const SkillIcon = ({ name, icon, color, position }: { name: string, icon: React.ReactNode, color: string, position: [number, number, number] }) => {
   const mesh = useRef<THREE.Mesh>(null)
-  const { viewport } = useThree()
+  const [hovered, setHovered] = useState(false)
+  const { size, viewport } = useThree()
+  const aspect = size.width / viewport.width
 
-  useFrame(({ mouse }) => {
+  useFrame((state) => {
     if (mesh.current) {
-      mesh.current.rotation.x = (mouse.y * viewport.height) / 50
-      mesh.current.rotation.y = (mouse.x * viewport.width) / 50
+      mesh.current.rotation.x = THREE.MathUtils.lerp(mesh.current.rotation.x, hovered ? state.mouse.y / aspect : 0, 0.1)
+      mesh.current.rotation.y = THREE.MathUtils.lerp(mesh.current.rotation.y, hovered ? state.mouse.x / aspect : 0, 0.1)
     }
   })
 
   return (
     <Float speed={1.5} rotationIntensity={0} floatIntensity={2}>
-      <mesh ref={mesh} position={position}>
-        <meshStandardMaterial color={color} transparent opacity={0.7} />
+      <mesh 
+        ref={mesh} 
+        position={position}
+        onPointerOver={(e) => {
+          e.stopPropagation()
+          setHovered(true)
+        }}
+        onPointerOut={(e) => {
+          e.stopPropagation()
+          setHovered(false)
+        }}
+      >
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color={hovered ? 'hotpink' : color} transparent opacity={0.7} />
         <Html transform occlude position={[0, 0, 0.51]} distanceFactor={10}>
-          <div style={{ fontSize: '3rem', color: '#000000', transform: 'translate3d(-50%, -50%, 0)' }}>
+          <div style={{ 
+            fontSize: '3rem', 
+            color: '#000000', 
+            transition: 'transform 0.3s ease-in-out',
+            transform: `translate3d(-50%, -50%, 0) scale(${hovered ? 1.2 : 1})`
+          }}>
             {icon}
           </div>
         </Html>
