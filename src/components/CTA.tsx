@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import Link from 'next/link'
-import TracingBeamButton from './UI/FancyButton'
+import FancyButton from './UI/FancyButton'
 
 
 
@@ -80,11 +80,10 @@ const ContactCard: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Replace the existing button with the new TracingBeamButton */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-          <TracingBeamButton onClick={flipCard}>
+          <FancyButton onClick={flipCard}>
             {isFlipped ? 'Show Info' : 'Show Socials'}
-          </TracingBeamButton>
+          </FancyButton>
         </div>
         
         {/* Flip button */}
