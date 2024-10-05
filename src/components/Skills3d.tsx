@@ -2,38 +2,45 @@
 
 import React, { useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Text, Float } from '@react-three/drei'
+import { Text, Float, Html } from '@react-three/drei'
 import { motion } from 'framer-motion'
 import * as THREE from 'three'
+import { SiJavascript, SiReact, SiHtml5, SiTypescript, SiNextdotjs, SiTailwindcss } from 'react-icons/si'
 
 const skills = [
-  { name: 'JavaScript', color: '#f0db4f' },
-  { name: 'React', color: '#61dafb' },
-  { name: 'HTML/CSS', color: '#e34c26' },
-  { name: 'TypeScript', color: '#007acc' },
-  { name: 'Next.js', color: '#000000' },
-  { name: 'Tailwind CSS', color: '#38b2ac' },
+  { name: 'JavaScript', icon: <SiJavascript color="#f0db4f" />, color: "#f0db4f" },
+  { name: 'React', icon: <SiReact color="#61dafb" />, color: "#61dafb" },
+  { name: 'HTML/CSS', icon: <SiHtml5 color="#e34c26" />, color: "#e34c26" },
+  { name: 'TypeScript', icon: <SiTypescript color="#007acc" />, color: "#007acc",},
+  { name: 'Next.js', icon: <SiNextdotjs color="#000000" />, color: "#ffffff" },
+  { name: 'Tailwind CSS', icon: <SiTailwindcss color="#38b2ac" />, color: "#38b2ac" },
 ]
 
-const SkillIcon = ({ name, color, position }: { name: string, color: string, position: [number, number, number] }) => {
+const SkillIcon = ({ name, icon, color, position }: { name: string, icon: React.ReactNode, color: string, position: [number, number, number] }) => {
   const mesh = useRef<THREE.Mesh>(null)
 
   useFrame((state) => {
     if (mesh.current) {
       mesh.current.rotation.x = Math.sin(state.clock.elapsedTime) * 0.2
       mesh.current.rotation.y = Math.cos(state.clock.elapsedTime) * 0.2
+      
     }
   })
 
   return (
     <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
-      <mesh {...mesh} position={position}>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color={color} />
+      <mesh ref={mesh} position={position}>
+        {/* <boxGeometry args={[1, 1, 1]} /> */}
+        <meshStandardMaterial color={color} transparent opacity={0.9}/>
+        <Html transform occlude position={[0, 0, 0.55]} distanceFactor={10}>
+          <div style={{ fontSize: '4rem', color: '#000000', transform: 'translate3d(-50%, -50%, 0)' }}>
+            {icon}
+          </div>
+        </Html>
         <Text
-          position={[0, 0, 0.51]}
+          position={[0, -0.6, 0.51]}
           fontSize={0.2}
-          color="#ffffff"
+          color="#000000"
           anchorX="center"
           anchorY="middle"
         >
@@ -53,6 +60,7 @@ const Scene = () => {
         <SkillIcon
           key={skill.name}
           name={skill.name}
+          icon={skill.icon}
           color={skill.color}
           position={[
             (index % 3) * 2 - 2,
