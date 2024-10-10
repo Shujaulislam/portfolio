@@ -21,38 +21,38 @@ const Skills = () => {
             className='text-center mb-12'
             >
                 <h2 className="text-3xl text-text font-bold mb-4">My Skills</h2>
-                <p className="text-lg text-gray-600">Here are some of the technologies I work with:</p>
+                <p className="text-lg text-gray-600">Here are some of the technologies I work with: </p>
             </motion.div>
             
         </div>
         <div className='flex justify-center items-center'>
-            <DivOrigami
-            icons={[
-              {icon: SiHtml5, color: "#e34c26", backgroundColor: "bg-neutral-200"},
-              {icon: SiCss3, color: "#264de4", backgroundColor: "bg-neutral-200"},
-              {icon: SiJavascript, color: "yellow", backgroundColor: ""},
-              {icon: SiTypescript, color: "#3178c6", backgroundColor: "bg-white"},
-              {icon: SiGit, color: "#F05033", backgroundColor: "bg-white"},
-            ]}
-            >Languages</DivOrigami>
-            <DivOrigami
-            icons={[
-              {icon: SiReact, color: "#61dbfb", backgroundColor: "bg-gray-500"},
-              {icon: SiNextdotjs, color: "black", backgroundColor: "bg-white"},
-              {icon: SiTailwindcss, color: "#3178c6", backgroundColor: "bg-white"},
-            ]}
-            >Frameworks</DivOrigami>
-            <DivOrigami
-            icons={[
-              {icon: SiVite, color: "yellow", backgroundColor: "bg-neutral-200"},
-              {icon: SiBabel, color: "#FBDE44", backgroundColor: "bg-gray-500"},
-              {icon: SiVisualstudiocode, color: "#3178c6", backgroundColor: "bg-neutral-200"},
-              {icon: SiPostman, color: "#FC6D35", backgroundColor: "bg-neutral-200"},
-              {icon: SiMantine, color: "yellow", backgroundColor: ""},
-              {icon: SiAxios, color: "#3178c6", backgroundColor: "bg-neutral-200"},
-              {icon: SiJquery, color: "#3178c6", backgroundColor: "bg-neutral-200"},
-            ]}
-            >Dev Tools & Libraries</DivOrigami>
+              <DivOrigami
+              icons={[
+                {icon: SiHtml5, color: "#e34c26", backgroundColor: "bg-neutral-200"},
+                {icon: SiCss3, color: "#264de4", backgroundColor: "bg-neutral-200"},
+                {icon: SiJavascript, color: "yellow", backgroundColor: ""},
+                {icon: SiTypescript, color: "#3178c6", backgroundColor: "bg-white"},
+                {icon: SiGit, color: "#F05033", backgroundColor: "bg-white"},
+              ]}
+              >Languages</DivOrigami>
+              <DivOrigami
+              icons={[
+                {icon: SiReact, color: "#61dbfb", backgroundColor: "bg-gray-500"},
+                {icon: SiNextdotjs, color: "black", backgroundColor: "bg-white"},
+                {icon: SiTailwindcss, color: "#3178c6", backgroundColor: "bg-white"},
+              ]}
+              >Frameworks</DivOrigami>
+              <DivOrigami
+              icons={[
+                {icon: SiVite, color: "#646CFF", backgroundColor: "bg-white"},
+                {icon: SiBabel, color: "#FBDE44", backgroundColor: "bg-gray-500"},
+                {icon: SiVisualstudiocode, color: "#3178c6", backgroundColor: "bg-neutral-200"},
+                {icon: SiPostman, color: "#FC6D35", backgroundColor: "bg-white"},
+                {icon: SiMantine, color: "yellow", backgroundColor: ""},
+                {icon: SiAxios, color: "#3178c6", backgroundColor: "bg-neutral-200"},
+                {icon: SiJquery, color: "#3178c6", backgroundColor: "bg-neutral-200"},
+              ]}
+              >Dev Tools & Libraries</DivOrigami>
         </div>
     </section>
   )

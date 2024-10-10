@@ -74,20 +74,20 @@ const Hero: React.FC = () => {
           className="flex justify-center space-x-4 mb-8"
         >
           {[
-            { Icon: FaGithub, color: 'black', url: 'https://github.com/Shujaulislam' },
-            { Icon: FaLinkedin, color: 'darkblue', url: 'https://www.linkedin.com/in/shuja-ul-islam' },
-            { Icon: FaTwitter, color: 'blue', url: '#' },
-          ].map(({ Icon, color, url }, index) => (
+            { Icon: FaGithub, hoverClass: 'hover:text-black', url: 'https://github.com/Shujaulislam' },
+            { Icon: FaLinkedin, hoverClass: 'hover:text-[#0077B5]', url: 'https://www.linkedin.com/in/shuja-ul-islam' },
+            { Icon: FaTwitter, hoverClass: 'hover:text-[#1DA1F2]', url: '#' },
+          ].map(({ Icon, hoverClass, url }, index) => (
             <motion.a
               key={index}
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.5 }}
+              whileHover={{ scale: 1.3 }}
               whileTap={{ scale: 0.9 }}
-              className="text-white hover:text-gray-200 transition-colors"
+              className={`text-white transition-colors duration-300 ${hoverClass}`}
             >
-              <Icon size={30} color={color} />
+              <Icon size={30} />
             </motion.a>
           ))}
         </motion.div>

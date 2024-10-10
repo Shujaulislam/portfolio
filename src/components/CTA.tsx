@@ -8,6 +8,7 @@ import FancyButton from './UI/FancyButton'
 
 
 
+
 const ContactCard: React.FC = () => {
   const [isFlipped, setIsFlipped] = useState(false)
 
@@ -29,7 +30,7 @@ const ContactCard: React.FC = () => {
             isFlipped ? 'invisible' : 'visible'
           }`}
         >
-          <div className="w-full h-full p-8 rounded-2xl bg-purple-600 bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-lg border border-purple-400 border-opacity-30 flex flex-col justify-between">
+          <div className="w-full h-full p-8 rounded-2xl bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-lg border border-white border-opacity-30 flex flex-col justify-between">
             <div>
               <h2 className="text-6xl font-extrabold text-white text-center mb-4">Contact<span className="text-blue-400">.</span></h2>
               <p className="text-gray-100 mb-4 text-2xl text-center">
@@ -56,7 +57,7 @@ const ContactCard: React.FC = () => {
             transform: 'rotateY(180deg)',
           }}
         >
-          <div className="w-full h-full p-8 rounded-2xl bg-purple-600 bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-lg border border-purple-400 border-opacity-30 flex flex-col justify-center items-center">
+          <div className="w-full h-full p-8 rounded-2xl bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-lg border border-white border-opacity-30 flex flex-col justify-center items-center">
             <div className="grid grid-cols-2 gap-8 pb-9">
               {[
                 { icon: FaGithub, link: 'https://github.com/Shujaulislam' },
