@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react'
 import * as THREE from 'three'
-import { MeshDistortMaterial, Sphere } from '@react-three/drei'
+import { MeshDistortMaterial, Sphere, OrbitControls } from '@react-three/drei'
 import { Canvas, useFrame } from '@react-three/fiber'
 import {motion} from 'framer-motion'
 import Link from 'next/link'
@@ -37,6 +37,7 @@ const Hero1 = () => {
                 <ambientLight intensity={0.5} />
                 <directionalLight position={[10, 10, 5]} intensity={1} />
                 <AnimatedSphere/>
+                <OrbitControls />
             </Canvas>
         </div>
         <div className="relative z-10 text-center">

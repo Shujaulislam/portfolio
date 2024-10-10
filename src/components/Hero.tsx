@@ -4,11 +4,32 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { Canvas } from '@react-three/fiber'
+import AnimatedSphere from './UI/Blob'
+import { OrbitControls } from '@react-three/drei'
+import AnimatedParticles from './UI/AnimatedParticles'
+
+
 
 const Hero: React.FC = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary to-secondary">
-      <BackgroundAnimation />
+      {/* <AnimatedParticles/> */}
+      {/* <div className="absolute inset-0 z-0 flex justify-center items-center">
+            <Canvas>
+                <ambientLight intensity={0.5} />
+                <directionalLight position={[10, 10, 5]} intensity={1} />
+                <AnimatedSphere
+                radius={1} 
+                widthSegments={100}
+                heightSegments={200}
+                position={[0, 0, 0]} 
+                distort={0.5} 
+                speed={3}
+                />
+                <OrbitControls />
+            </Canvas>
+      </div> */}
       <div className="relative z-10 text-center text-white">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
@@ -53,20 +74,20 @@ const Hero: React.FC = () => {
           className="flex justify-center space-x-4 mb-8"
         >
           {[
-            { Icon: FaGithub, url: 'https://github.com/Shujaulislam' },
-            { Icon: FaLinkedin, url: 'https://www.linkedin.com/in/shuja-ul-islam' },
-            { Icon: FaTwitter, url: '#' },
-          ].map(({ Icon, url }, index) => (
+            { Icon: FaGithub, color: 'black', url: 'https://github.com/Shujaulislam' },
+            { Icon: FaLinkedin, color: 'darkblue', url: 'https://www.linkedin.com/in/shuja-ul-islam' },
+            { Icon: FaTwitter, color: 'blue', url: '#' },
+          ].map(({ Icon, color, url }, index) => (
             <motion.a
               key={index}
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.2 }}
+              whileHover={{ scale: 1.5 }}
               whileTap={{ scale: 0.9 }}
               className="text-white hover:text-gray-200 transition-colors"
             >
-              <Icon size={30} />
+              <Icon size={30} color={color} />
             </motion.a>
           ))}
         </motion.div>
@@ -89,37 +110,6 @@ const Hero: React.FC = () => {
   )
 }
 
-const BackgroundAnimation: React.FC = () => {
-  return (
-    <div className="absolute inset-0">
-      {[...Array(60)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute bg-white opacity-45 rounded-full"
-          initial={{
-            left: '50%', //.`${Math.random() * 100}%`,
-            top: '50%', //`${Math.random() * 100}%`,
-            scale: Math.random() * 0.5 + 0.5,
-          }}
-          animate={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            scale: Math.random() * 0.5 + 0.5,
-          }}
-          transition={{
-            duration: Math.random() * 20 + 10,
-            repeat: Infinity,
-            repeatType: 'mirror',
-            ease: 'easeInOut',
-          }}
-          style={{
-            width: `${Math.random() * 10 + 5}px`,
-            height: `${Math.random() * 10 + 5}px`,
-          }}
-        />
-      ))}
-    </div>
-  )
-}
+
 
 export default Hero

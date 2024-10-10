@@ -3,41 +3,29 @@ import React, { ReactElement, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { SiGithub, SiHtml5, SiJavascript, SiReact, SiTypescript } from "react-icons/si";
-import { IconType } from 'react-icons';
 
-interface LogoItemProps {
-  icon: IconType;
-  color: string;
-  backgroundColor: string | null;
-}
-
-interface DivOrigamiProps {
-  icons?: LogoItemProps[];
-  children?: React.ReactNode;
-}
-
-export const DivOrigami: React.FC<DivOrigamiProps> = ({ icons, children }) => {
-  const defaultIcons: LogoItemProps[] = [
-    { icon: SiJavascript, color: "yellow", backgroundColor: "bg-neutral-200" },
-    { icon: SiReact, color: "#61dbfb", backgroundColor: "bg-gray-500" },
-    { icon: SiHtml5, color: "#e34c26", backgroundColor: "bg-neutral-200" },
-    { icon: SiGithub, color: "white", backgroundColor: "bg-gray-950" },
-    { icon: SiTypescript, color: "#3178c6", backgroundColor: "bg-white" },
-  ];
-
-  const logoItems = (icons || defaultIcons).map((item, index) => (
-    <LogoItem
-      key={index}
-      className={`${item.backgroundColor} text-neutral-900`}
-    >
-      <item.icon color={item.color} />
-    </LogoItem>
-  ));
-
+export const DivOrigami = () => {
   return (
-    <section className="flex flex-col items-center">
-      {children && <h2 className="mb-4 text-xl font-bold">{children}</h2>}
-      <LogoRolodex items={logoItems} />
+    <section >
+      <LogoRolodex
+        items={[
+          <LogoItem key={1} className="bg-neutral-200 text-neutral-900">
+            <SiJavascript color="yellow" />
+          </LogoItem>,
+          <LogoItem key={2} className="bg-gray-500 text-neutral-900">
+            <SiReact color="#61dbfb"/>
+          </LogoItem>,
+          <LogoItem key={3} className="bg-neutral-200 text-neutral-900">
+            <SiHtml5 color="#e34c26"/>
+          </LogoItem>,
+          <LogoItem key={4} className="bg-gray-950 text-black">
+            <SiGithub color="white"/>
+          </LogoItem>,
+          <LogoItem key={5} className="bg-white text-white">
+            <SiTypescript color="#3178c6"/>
+          </LogoItem>,
+        ]}
+      />
     </section>
   );
 };

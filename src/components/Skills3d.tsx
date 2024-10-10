@@ -43,7 +43,7 @@ const SkillIcon = ({ name, icon, color, position }: { name: string, icon: React.
           setHovered(false)
         }}
       >
-        <boxGeometry args={[1, 1, 1]} />
+        {/* <boxGeometry args={[1, 1, 1]} /> */}
         <meshStandardMaterial color={hovered ? 'hotpink' : color} transparent opacity={0.7} />
         <Html transform occlude position={[0, 0, 0.51]} distanceFactor={10}>
           <div style={{ 
@@ -102,7 +102,6 @@ const Skills3d: React.FC = () => {
     <section id="skills" className="section-padding bg-background">
       <div className="container">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}

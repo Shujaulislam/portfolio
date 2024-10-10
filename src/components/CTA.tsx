@@ -16,9 +16,9 @@ const ContactCard: React.FC = () => {
   }
 
   return (
-    <div className="flex items-center justify-center h-[40vh] bg-gradient-to-br from-purple-700 to-indigo-900">
+    <div className="flex items-center justify-center h-[60vh] bg-gradient-to-br from-purple-700 to-indigo-900">
       <motion.div
-        className="relative w-[400px] h-[250px] perspective-1000"
+        className="relative w-[650px] h-[350px] perspective-1000"
         initial={false}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{ duration: 0.6, ease: 'easeInOut' }}
@@ -31,15 +31,15 @@ const ContactCard: React.FC = () => {
         >
           <div className="w-full h-full p-8 rounded-2xl bg-purple-600 bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-lg border border-purple-400 border-opacity-30 flex flex-col justify-between">
             <div>
-              <h2 className="text-4xl font-bold text-white mb-4">Contact<span className="text-blue-400">.</span></h2>
-              <p className="text-gray-100 mb-4 text-sm">
-                Let's connect! Reach out via email or find me on social media.
+              <h2 className="text-6xl font-extrabold text-white text-center mb-4">Contact<span className="text-blue-400">.</span></h2>
+              <p className="text-gray-100 mb-4 text-2xl text-center">
+              Shoot me an email if you want to connect! You can also find me on Linkedin or Twitter if that's more your speed.
               </p>
             </div>
-            <div className="text-center pb-9">
+            <div className="text-center pb-14">
               <Link 
                 href="mailto:shujaulisla@gmail.com" 
-                className="text-white hover:text-blue-400 transition-colors duration-300 text-base"
+                className="text-white hover:text-blue-400 transition-colors duration-300 text-2xl"
               >
                 ✉️ shujaulisla@gmail.com
               </Link>

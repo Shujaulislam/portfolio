@@ -8,7 +8,7 @@ const projects= [
     {
         title: 'Accumens.INC',
         description: 'Implemented new features, UI enhancements, and website optimization, improving SEO score from 32 to 79 and increasing web traffic by 50%.',
-        image: '/placeholder.svg',  /*'/images/placeholder.svg',*/
+        image: '/images/acumenslogo.webp',
         tags: ['JavaScript', 'React.js', 'WordPress', 'PHP', 'HTML/CSS', 'Tailwind'],
         link: 'https://www.acumensinc.com/',
         size: 'small'
@@ -16,7 +16,7 @@ const projects= [
     {
         title: 'Humaya Power',
         description: 'Implemented new features, UI enhancements, and website optimization, improving SEO score from 32 to 79 and increasing web traffic by 50%.',
-        image: '/placeholder.svg',  /*'/images/placeholder.svg',*/
+        image: '/images/humayapower.png',
         tags: ['JavaScript', 'Next.js', 'Tailwind', 'TypeScript', 'Framer Motion'],
         link: 'https://humayapower.in/', 
         size: 'large'
@@ -24,7 +24,7 @@ const projects= [
     {
         title: 'Calendar App',
         description: 'Engineered a responsive calendar application with resource management, event creation, and drag-and-drop functionality, enhancing user interaction and achieving a 25% improvement in scheduling efficiency.',
-        image: '/placeholder.svg',  /*'/images/placeholder.svg',*/
+        image: '/images/calender.png',
         tags: ['JavaScript', 'Vite', 'React.js', 'HTML5', 'Tailwind CSS'],
         link: 'https://calender-tawny.vercel.app/',
         size: 'medium'
@@ -32,7 +32,7 @@ const projects= [
     {
         title: 'E-commerce Platform',
         description: 'Developed a responsive e-commerce platform using React.js, TypeScript, and Tailwind CSS, ensuring seamless user interactions and enhanced performance, resulting in a 20% increase in performance.',
-        image: '/placeholder.svg',  /*'/images/placeholder.svg',*/
+        image: '/images/e-commerce.png',
         tags: ['React.js', 'TypeScript', 'Framer Motion', 'SwiperJS'],
         link: 'https://vocal-crepe-ca1835.netlify.app/',
         size: 'small'

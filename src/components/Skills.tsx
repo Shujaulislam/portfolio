@@ -1,35 +1,13 @@
 "use client"
+
 import React from 'react'
 import {motion} from 'framer-motion'
-// import { DivOrigami } from './LogoOrigami'
+import { DivOrigami } from './LogoOrigami'
+import { SiAxios, SiBabel, SiCss3, SiGit, SiHtml5, SiJavascript, SiJquery, SiMantine, SiNextdotjs, SiPostman, SiReact, SiTailwindcss, SiTypescript, SiVisualstudiocode, SiVite } from 'react-icons/si'
 
 
-const skills = [
-    { name: "JavaScript", level:90 },
-    { name: "React", level:85 },
-    { name: "HTML/CSS", level:95 },
-    { name: "Typescript", level:80 },
-    { name: "Next.js", level:75 },
-    { name: "Tailwind CSS", level:85 },
-]
 
-const SkillBar: React.FC<{name: string, level: number}> = ({name, level}) => (
-    <div className="mb-4">
-        <div className="flex justify-between mb-1">
-            <span className="text-base font-medium text-text">{name}</span>
-            <span className="text-sm font-medium text-text">{level}%</span>
-        </div>
-        <div className="w-full bg-gray-200 rounded-full h-2.5">
-            <motion.div
-            className='bg-primary rounded-full h-2.5'
-            initial={{width: 0}}
-            whileInView={{width: `${level}%`}}
-            transition={{duration: 1, ease: "easeOut"}}
-            viewport={{once: true}}
-            />
-        </div>
-    </div>
-)
+
 
 const Skills = () => {
   return (
@@ -45,13 +23,37 @@ const Skills = () => {
                 <h2 className="text-3xl text-text font-bold mb-4">My Skills</h2>
                 <p className="text-lg text-gray-600">Here are some of the technologies I work with:</p>
             </motion.div>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-                {skills.map((skill) => (
-                    <SkillBar key={skill.name} name={skill.name} level={skill.level} />
-                ))}
-            </div>
+            
         </div>
-        {/* <DivOrigami/> */}
+        <div className='flex justify-center items-center'>
+            <DivOrigami
+            icons={[
+              {icon: SiHtml5, color: "#e34c26", backgroundColor: "bg-neutral-200"},
+              {icon: SiCss3, color: "#264de4", backgroundColor: "bg-neutral-200"},
+              {icon: SiJavascript, color: "yellow", backgroundColor: ""},
+              {icon: SiTypescript, color: "#3178c6", backgroundColor: "bg-white"},
+              {icon: SiGit, color: "#F05033", backgroundColor: "bg-white"},
+            ]}
+            >Languages</DivOrigami>
+            <DivOrigami
+            icons={[
+              {icon: SiReact, color: "#61dbfb", backgroundColor: "bg-gray-500"},
+              {icon: SiNextdotjs, color: "black", backgroundColor: "bg-white"},
+              {icon: SiTailwindcss, color: "#3178c6", backgroundColor: "bg-white"},
+            ]}
+            >Frameworks</DivOrigami>
+            <DivOrigami
+            icons={[
+              {icon: SiVite, color: "yellow", backgroundColor: "bg-neutral-200"},
+              {icon: SiBabel, color: "#FBDE44", backgroundColor: "bg-gray-500"},
+              {icon: SiVisualstudiocode, color: "#3178c6", backgroundColor: "bg-neutral-200"},
+              {icon: SiPostman, color: "#FC6D35", backgroundColor: "bg-neutral-200"},
+              {icon: SiMantine, color: "yellow", backgroundColor: ""},
+              {icon: SiAxios, color: "#3178c6", backgroundColor: "bg-neutral-200"},
+              {icon: SiJquery, color: "#3178c6", backgroundColor: "bg-neutral-200"},
+            ]}
+            >Dev Tools & Libraries</DivOrigami>
+        </div>
     </section>
   )
 
